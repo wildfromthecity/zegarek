@@ -15,6 +15,10 @@ input.onButtonPressed(Button.B, function () {
         minuty = 0
     }
 })
+input.onLogoEvent(TouchButtonEvent.Pressed, function () {
+    soundExpression.giggle.playUntilDone()
+    basic.showNumber(input.temperature())
+})
 input.onGesture(Gesture.Shake, function () {
     dostosuj = godziny
     if (ampm) {
@@ -51,6 +55,8 @@ czas = ""
 dostosuj = 0
 minuty = 0
 godziny = 0
+soundExpression.hello.playUntilDone()
+basic.showString("CZAS")
 basic.forever(function () {
     basic.pause(60000)
     if (minuty < 59) {
